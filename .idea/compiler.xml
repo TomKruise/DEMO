@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="cert" />
+        <module name="redis-spring-boot-starter" />
+        <module name="springboot-admin-server" />
+        <module name="spark-test" />
+        <module name="springboot-admin-client" />
+        <module name="akkasecond" />
+        <module name="springboot-listener" />
+        <module name="akka-third" />
+        <module name="netty-test" />
+        <module name="redis-spring-boot-configuration" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="8">
+      <module name="akka" target="1.8" />
+      <module name="springboot" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="springboot-admin-client" options="-parameters" />
+      <module name="springboot-admin-server" options="-parameters" />
+    </option>
+  </component>
+</project>
