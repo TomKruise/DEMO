@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        const socket = new WebSocket("ws://localhost:8082/websocket/1");
+
+        socket.onopen = (ws) => {
+            console.log("Open!", ws);
+        }
+
+        socket.onmessage = (ws) => {
+            console.log("Message: ", ws.data);
+        }
+
+        socket.onclose = (ws) => {
+            console.log("Close!", ws);
+        }
+
+        socket.onerror = (ws) => {
+            console.log("Error!", ws);
+        }
+
+        setTimeout(()=>{
+            socket.send("Send message from front")
+        },1000)
+
+        setTimeout(() => {
+            socket.close()
+        },5000)
+
+    </script>
+</body>
+</html>
