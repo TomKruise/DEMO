@@ -19,7 +19,13 @@
         <module>akka-third</module>
         <module>netty-test</module>
         <module>cert</module>
+        <module>websocket</module>
+        <module>mongodb</module>
     </modules>
 
-
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.5.7</version>
+    </parent>
 </project>
