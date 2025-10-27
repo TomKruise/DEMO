@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: tom-rocketmq
+  rocketmq:
+    nameServer: 172.16.55.185:9876
+    producer:
+      group: my-group
