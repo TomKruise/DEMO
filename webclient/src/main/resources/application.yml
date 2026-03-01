@@ -1,0 +1,39 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: message-notification-service
+
+# 自定义超时配置
+message:
+  notification:
+    timeout:
+      connection: 10000  # 连接超时（毫秒）
+      response: 30000     # 响应超时（毫秒）
+    retry:
+      max-attempts: 3     # 最大重试次数
+      backoff: 1000       # 重试间隔（毫秒）
+
+# 各厂商特定的超时配置
+vendor:
+  aliyun:
+    timeout:
+      connection: 5000
+      response: 10000
+  tencent:
+    timeout:
+      connection: 8000
+      response: 15000
+  huawei:
+    timeout:
+      connection: 6000
+      response: 12000
+
+logging:
+  level:
+    com.example.message: DEBUG
+    org.springframework.web.reactive: INFO
+    reactor.netty: INFO
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - [%X{traceId}] %msg%n"
